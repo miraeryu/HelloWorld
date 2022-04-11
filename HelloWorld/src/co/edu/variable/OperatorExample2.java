@@ -9,7 +9,9 @@ public class OperatorExample2 {
 		set10 = 127/10;
 		set5 = (127%10)/5;
 		others = ((127%10)%5);
+		//5개 상자에 나머지를 넣는것으로 출력
 		System.out.printf("%3d개의 오렌지를 10개입 상자에 %2d상자, 5개입 상자에 %1d상자 담고 %1d개가 남았습니다.", orange, set10, set5, others);
 	}
 	
 }
+

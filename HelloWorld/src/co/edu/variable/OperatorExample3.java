@@ -7,7 +7,7 @@ public class OperatorExample3 {
 		int cash, item, tax, charge;
 		cash = 10000;
 		item = 7500;
-		tax = item/10;
+		tax = item*10/110;
 		charge = cash - item;
 		System.out.printf("영수증"
 				+ "[현금]%5d"
