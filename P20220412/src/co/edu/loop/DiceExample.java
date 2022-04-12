@@ -2,8 +2,8 @@ package co.edu.loop;
 
 public class DiceExample {
 	public static void main(String[] args) {
-int dice, dice2, sumdice ;
-boolean twodice = true;
+		int dice, dice2, sumdice ;
+		boolean twodice = true;
 		while(twodice) {
 			dice = (int) (Math.random()*6)+1 ;
 			dice2 = (int) (Math.random()*6)+1 ;
@@ -16,7 +16,8 @@ boolean twodice = true;
 	}else {
 		System.out.println("나온 주사위의 값은" + dice + ", " + dice2 + "으로 합은 " + sumdice);
 		System.out.println("프로그램을 종료합니다.");
-		break;}
+		break;
+		}
 	
 
 }
