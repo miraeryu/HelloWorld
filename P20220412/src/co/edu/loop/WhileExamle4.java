@@ -20,18 +20,31 @@ public class WhileExamle4 {
 		for (int j = 1; j <= 5; j++) {
 			for (int i = 1; i <= j; i++) {
 				System.out.print("*");
-
 			}
 			System.out.println();
 		}
 		System.out.println("-------------------");
-		
+
 		for (int j = 1; j <= 5; j++) {
-			for (int i = 5 ; i >= j; i--) {
+			for (int i = 5; i >= j; i--) {
 				System.out.print("*");
 			}
 			System.out.println();
+
 		}
+		System.out.println("-------------------");
+		for (int j = 1; j <= 5; j++) {
+			for (int i = 5; i >= j; i--) {
+				System.out.printf(" ");
+
+			}
+			for (int i = 1; i <= j; i++) {
+				System.out.printf("*");
+			}
+			System.out.println();
+
+		}
+		System.out.println("-------------------");
 
 	}
 }
