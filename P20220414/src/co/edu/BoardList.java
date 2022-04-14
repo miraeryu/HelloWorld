@@ -29,7 +29,7 @@ public class BoardList {
 	}
 
 	// 수정 : 게시글번호 찾아서 내용, 제목 변경하도록
-	public boolean modiftBoard(Board board) {
+	public boolean modifyBoard(Board board) {
 		boolean check = false;
 		for (int i = 0; i < boards.length; i++) {
 			if (boards[i].getBoardNo() == board.getBoardNo()) {
@@ -69,6 +69,19 @@ public class BoardList {
 		return null;
 
 	}
+	
+	//작성자 조회
+	public Board[] searchWriter(String sWriter) {
+		for (int i =0; i< boards.length; i++) {
+			if (sWriter.equals(boards[i].getWriter())) {
+				boards[i].getinfo();
+				return boards;
+			}
+		}
+		return null;
+	}
+	
+	
 
 	// 게시글 목록
 	public Board[] boardList() {

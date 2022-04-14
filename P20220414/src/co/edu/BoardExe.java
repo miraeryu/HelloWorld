@@ -10,7 +10,7 @@ public class BoardExe {
 		boardList.init(5);
 
 		while (true) {
-			System.out.println("1.추가 2.수정 3.목록 4.삭제 5.한건조회 9.종료");
+			System.out.println("1.추가 2.수정 3.목록 4.삭제 5.한건조회 6.작성자조회 9.종료");
 			System.out.printf("선택>>");
 			int menu = scn.nextInt();
 			scn.nextLine();
@@ -46,7 +46,7 @@ public class BoardExe {
 				String content = scn.nextLine();
 				Board cBoard = new Board(bNo, title, content, null);
 
-				if (boardList.modiftBoard(cBoard)) {// BoardList에 수정부분 참조
+				if (boardList.modifyBoard(cBoard)) {// BoardList에 수정부분 참조
 					System.out.println("정상적으로 수정되었습니다.");
 				} else {
 					System.out.println("수정이 비정상적으로 종료되었습니다.");
@@ -82,6 +82,11 @@ public class BoardExe {
 					System.out.println("조회결과가 없습니다.");
 				} else {
 					getBoard.getDetailInfo();}
+			}else if (menu == 6) {
+				System.out.println("작성자 이름을 입력하시오.");
+				String sWriter = scn.next();
+				Board[] getBoard = boardList.searchWriter(sWriter);
+				
 			}
 
 			else if (menu == 9) {
