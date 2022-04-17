@@ -92,6 +92,18 @@ public class Board {
 		System.out.printf("",//
 				this.boardNo, this.writer, this.title,this.searchCnt, this.content );
 	}
+
+	
+	//어노테이션 p.317
+	//부모클래스의 toString(메소드)를 가져와서 자식클래스가 재정의 
+	//최상위 클래스 = Object 다른 클래스는 이를 상속받아 구현되고 있음
+	//이를 알려주는게 어노테이션인데 현실은 별로 안쓰임...
+	
+	@Override
+	public String toString() {
+		return "Board [boardNo=" + boardNo + ", title=" + title + ", content=" + content + ", writer=" + writer
+				+ ", searchCnt=" + searchCnt + "]";
+	}
 	
 
 }

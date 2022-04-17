@@ -1,5 +1,6 @@
 package co.edu;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BoardExe {
@@ -12,7 +13,13 @@ public class BoardExe {
 		while (true) {
 			System.out.println("1.추가 2.수정 3.목록 4.삭제 5.한건조회 6.작성자조회 9.종료");
 			System.out.printf("선택>>");
-			int menu = scn.nextInt();
+			int menu= -1;
+			try {
+				menu = scn.nextInt(); // 숫자반환이지만 사용자가 문자열을 입력할 수 있음. 예외 처리 지정
+			} catch (InputMismatchException e) {
+				System.out.println("잘못된 입력입니다.");
+
+			}
 			scn.nextLine();
 
 			if (menu == 1) {
@@ -33,7 +40,7 @@ public class BoardExe {
 					System.out.println("정상입력되었습니다.");
 				} else if (chk == -1) {
 					System.out.println("저장 공간이 없습니다.");
-				}else if (chk == 1) {
+				} else if (chk == 1) {
 					System.out.println("이미 있는 번호입니다.");
 				}
 
@@ -78,15 +85,26 @@ public class BoardExe {
 
 				Board getBoard = boardList.searchBoard(bNo);
 
-				if (getBoard == null) { 
+				if (getBoard == null) {
 					System.out.println("조회결과가 없습니다.");
 				} else {
-					getBoard.getDetailInfo();}
-			}else if (menu == 6) {
+					getBoard.getDetailInfo();
+				}
+			} else if (menu == 6) {
+
 				System.out.println("작성자 이름을 입력하시오.");
+
 				String sWriter = scn.next();
-				Board[] getBoard = boardList.searchWriter(sWriter);
-				
+				Board[] writerList = boardList.searchWriter(sWriter); // 배열 변수 writerList 선언
+				// writerList 내용 출력
+
+				System.out.println("게시글번호   제목            내용             작성자  조회수");
+				System.out.println("====================================================");
+				for (Board board : writerList) { // 향상된for문. 전체보기
+					if (board != null) {
+						board.getinfo();
+					}
+				}
 			}
 
 			else if (menu == 9) {

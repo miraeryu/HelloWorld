@@ -11,17 +11,17 @@ public class BoardList {
 
 	// 배열에 한건 입력
 	public int addBoard(Board board) { // 타입뿐만이 아닌 클래스도 받아오기 가능
-		//더 이상 공간이 없을때 = false
+		// 더 이상 공간이 없을때 = false
 //		boolean check = false;
-		int errorCase = -1; //저장공간없음
+		int errorCase = -1; // 저장공간없음
 		for (int i = 0; i < boards.length; i++) {
 			if (boards[i] != null && boards[i].getBoardNo() == board.getBoardNo()) {
-				errorCase = 1; //동일한 값이 있을 경우의 에러
-				break; 
+				errorCase = 1; // 동일한 값이 있을 경우의 에러
+				break;
 			}
 			if (boards[i] == null) {
 				boards[i] = board;
-				errorCase = 0; //정상처리
+				errorCase = 0; // 정상처리
 				break;
 			}
 		}
@@ -61,27 +61,34 @@ public class BoardList {
 	public Board searchBoard(int bNo) { // 리턴타입은 void 입력 x
 		for (int i = 0; i < boards.length; i++) {
 			if (boards[i].getBoardNo() == bNo) {
-				int currentCnt = boards[i].getSearchCnt(); //현재 조회수를 가지고옴
-				boards[i].setSearchCnt(currentCnt + 1 );
+				int currentCnt = boards[i].getSearchCnt(); // 현재 조회수를 가지고옴
+				boards[i].setSearchCnt(currentCnt + 1);
 				return boards[i];
 			}
 		}
 		return null;
 
 	}
-	
-	//작성자 조회
+
+	// 작성자 조회
 	public Board[] searchWriter(String sWriter) {
-		for (int i =0; i< boards.length; i++) {
-			if (sWriter.equals(boards[i].getWriter())) {
-				boards[i].getinfo();
-				return boards;
+		Board[] sBoards = new Board[5];
+		for (int i = 0; i < boards.length; i++) {
+			if (boards[i] != null && boards[i].getWriter().equals(sWriter)) {
+				// 좌우 모두 참이어야 실행. null이 아니면서 입력된것과 같은 문자열을 찾는 명령어
+				for (int j = 0; j < sBoards.length; j++) { //이름 조회 반환 배열
+					if (sBoards[j] == null) {
+						sBoards[j] = boards[j];
+						break;
+					}
+
+				}
+
 			}
 		}
-		return null;
+		return sBoards;
+
 	}
-	
-	
 
 	// 게시글 목록
 	public Board[] boardList() {
