@@ -25,13 +25,13 @@ public class Friend {
 
 	//메소드
 	
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	 String getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 	public void setPhone(String phone) {
