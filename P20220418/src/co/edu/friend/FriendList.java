@@ -6,7 +6,7 @@ public class FriendList {
 	public static void main(String[] args) {
 		
 		final String val = "Hong";
-		val = "hong2";
+//		val = "hong2";
 
 		Friend[] friends = new Friend[10];
 //		friends[0] = new UnivFriend("홍길동","010-1111-2222","대구대학교","컴정"); //부모클래스 필드 1,2 자식클래스 필드 1,2 순차적 입력

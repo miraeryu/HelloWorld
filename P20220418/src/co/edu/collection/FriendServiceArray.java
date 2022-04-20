@@ -1,8 +1,10 @@
 package co.edu.collection;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import co.edu.friend.Friend;
+import co.edu.friend.Gender;
 
 //배열의 기능 활용
 
@@ -79,6 +81,12 @@ Scanner sc = new Scanner(System.in);
 			
 			}
 		}System.out.println("메뉴로 돌아갑니다.");
+		return null;
+	}
+
+	@Override
+	public ArrayList<Friend> findGender(Gender gender) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -8,6 +8,7 @@ public class Friend {
 	//필드
 	private String name;
 	private String phone;
+	private Gender gender; //MEN, WOMEN
 	
 	
 	//생성자
@@ -21,10 +22,17 @@ public class Friend {
 		this.phone = phone;
 	}
 
+	public Friend(String name, String phone, Gender gender) {
+		super();
+		this.name = name;
+		this.phone = phone;
+		this.gender = gender;
+	}
 
 
 	//메소드
 	
+
 	public String getName() {
 		return name;
 	}
@@ -40,9 +48,19 @@ public class Friend {
 
 
 
+	
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
 	@Override
 	public String toString() {
-		return "친구 [이름=" + name + ", 전화번호=" + phone + "]";
+		return "친구 [이름=" + name + ", 전화번호=" + phone +", 성별 = "+gender+ "]";
 	}
 	
 	
