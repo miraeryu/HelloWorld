@@ -13,20 +13,24 @@ public class MultiLineExam {
 //		
 //		if(str.equals("")) {
 //			break;	}
+//		
+//		Scanner scn = new Scanner(System.in);
+//		String str = "";
+//		while (true) {
+//			String temp = scn.nextLine();
+//			if (temp.equals("exit")) {
+//				break;
+//			}
+//			str += temp + "\n";
+//		}
+//		
+		String str1 = new String("Hello");
+		String str2 = new String("hello");
 		
-		Scanner scn = new Scanner(System.in);
-		String str = "";
-		while (true) {
-			String temp = scn.nextLine();
-			if (temp.equals("exit")) {
-				break;
-			}
-			str += temp + "\n";
-		}
+		if (str1.equals(str2)) {
+			System.out.println("same");
+		}System.out.println("diff");
 		
-		
-		
-		System.out.println(str.toString());
 	}
 
 }
